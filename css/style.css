@@ -1,0 +1,242 @@
+*, 
+*::before, 
+*::after {
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background:  #f9e5fa;
+  color: #313131;
+  text-shadow: 2px 2px 22px rgb(32, 107, 178);
+
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+  margin-top: 20px;
+   height: 20%;
+  
+ }
+
+
+
+ .front, .back {
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 5s;
+ -webkit-backface-visibility: hidden;
+ overflow: hidden;
+ }
+
+ .card.flip {
+  transform: rotatex(180deg);
+}
+ .front {
+   
+  transform: rotatex(180deg);
+  -webkit-transform: rotateX(180deg);
+  text-shadow: 3px 3px 22px rgb(186, 139, 218);
+  font-size: 60px;
+   color:#313131;
+   
+ }
+.back {
+  color: rgb(73, 68, 68);
+  font-size: 60px;
+  text-shadow: 3px 3px 22px rgb(186, 139, 218);
+ 
+}
+
+ 
+ header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'slackey', cursive;
+  color: #313131;
+  text-shadow: 2px 2px 22px rgb(32, 107, 178);
+  font-size: 70px;
+  
+ }
+  
+ .wrapper {
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.6);
+  background: radial-gradient(circle, #2f7ca3, #8cade2, #28d9ed);;
+  padding: 30px;
+  border-radius: 10px;
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 64%;
+  height: 680px;
+  margin-left: 260px;
+  margin-bottom: 50px;
+ 
+}
+
+.card {
+position: relative;
+ transform: scale(1);
+  transform-style: preserve-3d;
+  background-color: #29d9ed;
+  height: 20%;
+  width: 23%;
+  cursor: default;
+  box-shadow: 5px 2px 2px 0 rgba(46, 61, 73, 0.5 );
+  z-index: 1;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: flash-light-gry 0.6s;
+  background: gray;
+  perspective: 1000px;
+
+
+}
+.card:active {
+  transform: scale(.97);
+  transition: transform .2s;
+}
+/* styling the cards which are aded by js */
+
+.card.open {
+  background: #0effaf;
+  cursor: default;
+  animation: flash-grn 0.4s;
+ 
+}
+
+.deck .card.show {
+  font-size: 33px;
+}
+
+.card.match {
+  cursor: default;
+  background: #e1cbf0;
+  font-size: 33px;
+  animation: flash-pnk 0.5s;
+ 
+  
+}  
+/* ========================================= */
+
+
+
+#restartButton {
+  width: 210px;
+  border: 2px solid #313131;
+  color: #313131;
+  padding: 7px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-shadow: 2px 2px 22px rgb(32, 107, 178);
+}
+#restartButton:hover {
+  background: #29d9ed;
+  transition: linear 1s;
+}
+
+
+.content {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(172, 127, 214);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  font-size: 20px;
+  border-radius: 25px;
+  
+}
+
+
+ 
+/* animations */
+ 
+@keyframes flash-light-gry {
+    0% {
+        background-color: #f10c0c;
+        transform: matrix(-0.866, -0.5, 0.5, 0.866, 0, 0);
+        transform: rotateX(180deg);
+    }
+    100% {
+        backgroundr: #f36404;
+        transform: rotateX(360deg);
+    }
+}
+
+
+@keyframes flash-grn {
+    0% {
+        background-color: #06011b;
+    }
+    100% {
+        background-color: #02ccba;
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes flash-pnk {
+    0% {
+        background-color: rgb(22, 8, 223);
+    }
+    100% {
+        background-color: rgb(236, 148, 214) ;
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes blink {
+    0% {
+        background: rgb(255, 0, 76);
+        box-shadow: 0 0 10px 3px rgb(255, 0, 128);
+    }
+    100% {
+        background-color: #FFF;
+    }
+}
+
+@media screen and (max-width: 700px) {
+ #restart {
+   margin-right: 10px;
+ }
+  .heading {
+    font-size: 49px;
+    text-align: center;
+    margin-left: 0;
+ 
+  }
+ .card {
+   height: 60px;
+ }
+ .score, .timer {
+   font-size: 21px;
+   margin-left: 22px;
+ }
+  .wrapper {
+    margin-left: 6px;
+    width: 96%;
+    height: 55%;
+  }
+
+}
