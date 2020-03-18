@@ -35,13 +35,11 @@ body {
  overflow: hidden;
  }
 
- .card.flip {
-  transform: rotatex(180deg);
-}
+
  .front {
    
   transform: rotatex(180deg);
-  -webkit-transform: rotateX(180deg);
+ transition: ease-in-out .7s;
   text-shadow: 3px 3px 22px rgb(186, 139, 218);
   font-size: 60px;
    color:#313131;
@@ -229,6 +227,7 @@ position: relative;
  .card {
    height: 60px;
  }
+
  .score, .timer {
    font-size: 21px;
    margin-left: 22px;
