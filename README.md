@@ -1,6 +1,6 @@
 # Memory-Game
 
-a responsive pure JavaScript, css and HTML Memory Game.
+A responsive pure JavaScript, css and HTML Memory Game.
 Matching Cards Game
 The game starts when you make the first choice move. So the timer begins to record your done time for all the pairs of the table. There are plenty of moves you can take and no limit in game time.
 There are numbers used to design the cards.
